@@ -289,6 +289,21 @@ h2 {
     .hero-content p {
         font-size: 1.2rem;
     }
+     .footer-contents {
+            margin-bottom: 20px;
+        }
+
+        .footer-contents a {
+            color: #fff; /* Color de los enlaces */
+            text-decoration: none; /* Sin subrayado */
+            margin: 0 15px; /* Espaciado entre enlaces */
+            font-size: 1.1em;
+            transition: color 0.3s ease; /* Transición suave para el color */
+        }
+
+        .footer-contents a:hover {
+            color: #007bff; /* Color de ejemplo al pasar el ratón */
+        }
 }
 
 /* Media query para páginas con 2 columnas en escritorio */

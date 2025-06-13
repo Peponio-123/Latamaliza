@@ -10,6 +10,64 @@
     --fondo-claro: #f9f9f9;
 }
 
+.footer-content {
+    display: flex; /* Habilita Flexbox */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos: logo a la izq, nav a la der */
+    align-items: center; /* Alinea verticalmente los elementos al centro */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    max-width: 1200px; /* Ancho máximo para el contenido del footer (ajusta según necesites) */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    padding-bottom: 20px; /* Espacio debajo del logo/nav antes del copyright */
+}
+
+/* Estilos para el contenedor del logo */
+.footer-logo {
+    flex-shrink: 0; /* Evita que el logo se encoja */
+    margin-right: 20px; /* Espacio a la derecha del logo antes de la navegación */
+}
+
+.footer-logo img {
+    max-height: 50px; /* Altura máxima del logo (ajusta según el tamaño de tu logo) */
+    width: auto; /* Mantiene la proporción del logo */
+}
+
+/* Estilos para la navegación dentro del footer */
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Habilita Flexbox para los elementos de la lista */
+    flex-wrap: wrap; /* Permite que los elementos de la lista se envuelvan */
+    justify-content: flex-end; /* Alinea los elementos de la lista a la derecha (si hay espacio) */
+}
+
+.footer-nav ul li {
+    margin-left: 20px; /* Espacio a la izquierda de cada elemento de la lista */
+    /* Para el primer elemento, puedes resetear el margen si lo deseas: */
+    /* &:first-child { margin-left: 0; } */
+}
+
+.footer-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-nav ul li a:hover {
+    color: #007bff; /* Color al pasar el ratón */
+}
+
+/* Estilos para el párrafo de derechos de autor */
+.footer-copyright {
+    text-align: center; /* Centra el texto de copyright */
+    margin-top: 20px; /* Margen superior para separarlo de la navegación */
+    font-size: 0.9em;
+    color: #ccc;
+    border-top: 1px solid #555; /* Línea superior para separar del resto del footer */
+    padding-top: 10px; /* Espacio entre la línea y el texto */
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -289,21 +347,25 @@ h2 {
     .hero-content p {
         font-size: 1.2rem;
     }
-     .footer-contents {
-            margin-bottom: 20px;
-        }
+  .footer-content {
+        flex-direction: column; /* Apila el logo y la navegación en pantallas más pequeñas */
+        align-items: center; /* Centra los elementos cuando están apilados */
+    }
 
-        .footer-contents a {
-            color: #fff; /* Color de los enlaces */
-            text-decoration: none; /* Sin subrayado */
-            margin: 0 15px; /* Espaciado entre enlaces */
-            font-size: 1.1em;
-            transition: color 0.3s ease; /* Transición suave para el color */
-        }
+    .footer-logo {
+        margin-right: 0; /* Elimina el margen a la derecha del logo */
+        margin-bottom: 20px; /* Añade margen debajo del logo */
+    }
 
-        .footer-contents a:hover {
-            color: #007bff; /* Color de ejemplo al pasar el ratón */
-        }
+    .footer-nav ul {
+        flex-direction: column; /* Apila los enlaces de navegación */
+        text-align: center; /* Centra los enlaces */
+    }
+
+    .footer-nav ul li {
+        margin: 10px 0; /* Espacio vertical entre los enlaces apilados */
+    }
+}
 }
 
 /* Media query para páginas con 2 columnas en escritorio */

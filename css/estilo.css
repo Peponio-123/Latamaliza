@@ -1,0 +1,303 @@
+/* estilos.css */
+
+/* --- Variables de Color (Basado en Pantone) --- */
+:root {
+    --pantone-7499-c: rgb(255, 255, 171); /* Un amarillo pálido */
+    --pantone-576-c: rgb(132, 168, 71);   /* Verde primario */
+    --pantone-7425-c: rgb(165, 71, 105);  /* Un rosa oscuro/magenta */
+    --pantone-2635-c: rgb(251, 210, 255); /* Un lila pálido */
+    --texto-oscuro: #333;
+    --fondo-claro: #f9f9f9;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--fondo-claro);
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+}
+
+/* --- Header y Footer --- */
+header, footer {
+    background-color: var(--pantone-576-c); /* Verde primario */
+    color: white;
+    padding: 1rem 5%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* --- Logo --- */
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+}
+
+/* --- Navegación --- */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+/* --- Contenido Principal --- */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    min-height: 70vh;
+}
+
+h1, h2 {
+    color: var(--pantone-576-c); /* Verde primario */
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+h2 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+/* --- Estilos para la página de Inicio (Hero Section - Full Width) --- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 2rem; /* Aumenté el padding vertical para más espacio */
+    background: url('tamal.jpg') no-repeat center center/cover; /* Ancho aumentado */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 2rem; /* Añadido margen inferior para separar del siguiente elemento */
+}
+
+.hero-content {
+    max-width: 800px; /* Limita el ancho del contenido dentro del hero */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: white;
+    margin: 0;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* --- Sección de Video --- */
+.video-section {
+    background-color: #fff;
+    padding: 2rem;
+    margin-top: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 8px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* --- Estilos para la página de Menú --- */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.menu-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.menu-item-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item-info h3 {
+    margin-top: 0;
+    color: var(--pantone-576-c); /* Verde primario */
+}
+
+.menu-item-info .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--texto-oscuro);
+    margin-top: auto;
+}
+
+/* --- Estilos para la página de Ubicación --- */
+.location-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 8px;
+}
+
+.address-details {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.location-image img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+/* --- Estilos para la página Sobre Nosotros --- */
+.about-us-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.about-us-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.about-us-text h2 {
+    text-align: left;
+    margin-top: 0;
+    color: var(--pantone-576-c); /* Verde primario */
+}
+
+
+/* --- DISEÑO RESPONSIVO (PARA CELULARES) --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 0.5rem;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+    }
+
+    main {
+        padding: 0 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .hero {
+        padding: 4rem 1rem; /* Reduce el padding en móviles */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Media query para páginas con 2 columnas en escritorio */
+@media (min-width: 992px) {
+    .location-content {
+        grid-template-columns: 2fr 1fr;
+    }
+    .about-us-content {
+        grid-template-columns: 1fr 2fr;
+        gap: 3rem;
+    }
+}

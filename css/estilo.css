@@ -27,7 +27,7 @@
 }
 
 .footer-logo img {
-    max-height: 50px; /* Altura máxima del logo (ajusta según el tamaño de tu logo) */
+    max-height: 150px; /* Altura máxima del logo (ajusta según el tamaño de tu logo) */
     width: auto; /* Mantiene la proporción del logo */
 }
 

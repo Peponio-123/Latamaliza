@@ -3,69 +3,11 @@
 /* --- Variables de Color (Basado en Pantone) --- */
 :root {
     --pantone-7499-c: rgb(255, 255, 171); /* Un amarillo pálido */
-    --pantone-576-c: rgb(132, 168, 71);   /* Verde primario */
-    --pantone-7425-c: rgb(165, 71, 105);  /* Un rosa oscuro/magenta */
+    --pantone-576-c: rgb(132, 168, 71);    /* Verde primario */
+    --pantone-7425-c: rgb(165, 71, 105);   /* Un rosa oscuro/magenta */
     --pantone-2635-c: rgb(251, 210, 255); /* Un lila pálido */
     --texto-oscuro: #333;
     --fondo-claro: #f9f9f9;
-}
-
-.footer-content {
-    display: flex; /* Habilita Flexbox */
-    justify-content: space-between; /* Distribuye el espacio entre los elementos: logo a la izq, nav a la der */
-    align-items: center; /* Alinea verticalmente los elementos al centro */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
-    max-width: 1200px; /* Ancho máximo para el contenido del footer (ajusta según necesites) */
-    margin: 0 auto; /* Centra el contenedor en la página */
-    padding-bottom: 20px; /* Espacio debajo del logo/nav antes del copyright */
-}
-
-/* Estilos para el contenedor del logo */
-.footer-logo {
-    flex-shrink: 0; /* Evita que el logo se encoja */
-    margin-right: 20px; /* Espacio a la derecha del logo antes de la navegación */
-}
-
-.footer-logo img {
-    max-height: 150px; /* Altura máxima del logo (ajusta según el tamaño de tu logo) */
-    width: auto; /* Mantiene la proporción del logo */
-}
-
-/* Estilos para la navegación dentro del footer */
-.footer-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* Habilita Flexbox para los elementos de la lista */
-    flex-wrap: wrap; /* Permite que los elementos de la lista se envuelvan */
-    justify-content: flex-end; /* Alinea los elementos de la lista a la derecha (si hay espacio) */
-}
-
-.footer-nav ul li {
-    margin-left: 20px; /* Espacio a la izquierda de cada elemento de la lista */
-    /* Para el primer elemento, puedes resetear el margen si lo deseas: */
-    /* &:first-child { margin-left: 0; } */
-}
-
-.footer-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.footer-nav ul li a:hover {
-    color: #007bff; /* Color al pasar el ratón */
-}
-
-/* Estilos para el párrafo de derechos de autor */
-.footer-copyright {
-    text-align: center; /* Centra el texto de copyright */
-    margin-top: 20px; /* Margen superior para separarlo de la navegación */
-    font-size: 0.9em;
-    color: #ccc;
-    border-top: 1px solid #555; /* Línea superior para separar del resto del footer */
-    padding-top: 10px; /* Espacio entre la línea y el texto */
 }
 
 body {
@@ -94,6 +36,7 @@ header {
 footer {
     text-align: center;
     margin-top: 3rem;
+    padding-top: 1rem; /* Added padding to top of footer for better separation */
 }
 
 /* --- Logo --- */
@@ -108,12 +51,14 @@ footer {
     text-decoration: none;
 }
 
-/* --- Navegación --- */
+/* --- Navegación Principal --- */
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
+    flex-wrap: wrap; /* Allow navigation items to wrap */
+    justify-content: center; /* Center items on smaller screens */
 }
 
 nav ul li {
@@ -164,15 +109,15 @@ h2 {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 6rem 2rem; /* Aumenté el padding vertical para más espacio */
-    background: url('tamal.jpg') no-repeat center center/cover; /* Ancho aumentado */
+    padding: 6rem 2rem;
+    background: url('../tamal.jpg') no-repeat center center/cover; /* Asegúrate de que la ruta de la imagen sea correcta */
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    margin-bottom: 2rem; /* Añadido margen inferior para separar del siguiente elemento */
+    margin-bottom: 2rem;
 }
 
 .hero-content {
-    max-width: 800px; /* Limita el ancho del contenido dentro del hero */
+    max-width: 800px;
 }
 
 .hero-content h1 {
@@ -272,6 +217,7 @@ h2 {
     background-color: white;
     padding: 2rem;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Added shadow for consistency */
 }
 
 .location-image img {
@@ -301,6 +247,144 @@ h2 {
     text-align: left;
     margin-top: 0;
     color: var(--pantone-576-c); /* Verde primario */
+}
+
+/* --- Estilos para la página de Portafolio (Nueva) --- */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.portfolio-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.portfolio-info {
+    padding: 1.5rem;
+}
+
+.portfolio-info h3 {
+    margin-top: 0;
+    color: var(--pantone-576-c);
+}
+
+/* --- Estilos para la página de Blog (Nueva) --- */
+.blog-post {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    margin-top: 2rem;
+}
+
+.blog-post .blog-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.blog-post h2 {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--pantone-576-c);
+}
+
+.blog-post .blog-meta {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+/* --- Estilos del Footer --- */
+.footer-content {
+    display: flex; /* Habilita Flexbox */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    align-items: center; /* Alinea verticalmente los elementos al centro */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    max-width: 1200px; /* Ancho máximo para el contenido del footer (ajusta según necesites) */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    padding-bottom: 20px; /* Espacio debajo del logo/nav antes del copyright */
+}
+
+/* Estilos para el contenedor del logo */
+.footer-logo {
+    flex-shrink: 0; /* Evita que el logo se encoja */
+    margin-right: 20px; /* Espacio a la derecha del logo antes de la navegación */
+}
+
+.footer-logo img {
+    max-height: 150px; /* Altura máxima del logo (ajusta según el tamaño de tu logo) */
+    width: auto; /* Mantiene la proporción del logo */
+}
+
+/* Estilos para la navegación dentro del footer */
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Habilita Flexbox para los elementos de la lista */
+    flex-wrap: wrap; /* Permite que los elementos de la lista se envuelvan */
+    justify-content: flex-end; /* Alinea los elementos de la lista a la derecha (si hay espacio) */
+}
+
+.footer-nav ul li {
+    margin-left: 20px; /* Espacio a la izquierda de cada elemento de la lista */
+}
+
+.footer-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-nav ul li a:hover {
+    color: var(--pantone-7499-c); /* Color al pasar el ratón, ajustado para contraste */
+}
+
+/* Estilos para enlaces de redes sociales en el footer */
+.social-links {
+    display: flex;
+    gap: 15px; /* Espacio entre los iconos de redes sociales */
+    margin-left: 20px; /* Espacio a la izquierda de los iconos si el nav está a la derecha */
+}
+
+.social-links a {
+    color: white; /* Color del icono */
+    font-size: 1.8rem; /* Tamaño del icono */
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--pantone-7499-c); /* Color al pasar el ratón */
+}
+
+/* Estilos para el párrafo de derechos de autor */
+.footer-copyright {
+    text-align: center; /* Centra el texto de copyright */
+    margin-top: 20px; /* Margen superior para separarlo de la navegación */
+    font-size: 0.9em;
+    color: #ccc;
+    border-top: 1px solid #555; /* Línea superior para separar del resto del footer */
+    padding-top: 10px; /* Espacio entre la línea y el texto */
+    width: 100%; /* Asegura que la línea abarque todo el ancho */
 }
 
 
@@ -347,7 +431,7 @@ h2 {
     .hero-content p {
         font-size: 1.2rem;
     }
-  .footer-content {
+    .footer-content {
         flex-direction: column; /* Apila el logo y la navegación en pantallas más pequeñas */
         align-items: center; /* Centra los elementos cuando están apilados */
     }
@@ -360,13 +444,24 @@ h2 {
     .footer-nav ul {
         flex-direction: column; /* Apila los enlaces de navegación */
         text-align: center; /* Centra los enlaces */
+        margin-bottom: 20px; /* Espacio debajo de la navegación del footer */
     }
 
     .footer-nav ul li {
         margin: 10px 0; /* Espacio vertical entre los enlaces apilados */
     }
+
+    .social-links {
+        margin-left: 0; /* Elimina margen en móviles */
+        margin-bottom: 20px; /* Espacio debajo de los iconos */
+    }
+
+    /* Ajustes para la cuadrícula del portafolio en móviles */
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+    }
 }
-}
+
 
 /* Media query para páginas con 2 columnas en escritorio */
 @media (min-width: 992px) {

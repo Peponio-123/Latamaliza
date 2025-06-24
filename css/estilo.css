@@ -110,7 +110,10 @@ h2 {
     justify-content: center;
     text-align: center;
     padding: 6rem 2rem;
-    background: url('../tamal.jpg') no-repeat center center/cover; /* Asegúrate de que la ruta de la imagen sea correcta */
+    /* La imagen de fondo ahora se define en línea en el HTML para mayor control */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     margin-bottom: 2rem;
